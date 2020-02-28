@@ -44,7 +44,9 @@
     <Compile Include="Entity\Cliente.cs" />
     <Compile Include="Entity\Recarga.cs" />
     <Compile Include="Entity\Tarjeta.cs" />
+    <Compile Include="Interfaces\ICliente.cs" />
     <Compile Include="Interfaces\IRecarga.cs" />
+    <Compile Include="Interfaces\ITarjeta.cs" />
     <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RecargaValueObject\CodigoTarjeta.cs" />

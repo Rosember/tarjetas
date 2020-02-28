@@ -31,8 +31,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,15 +50,76 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Cliente.cs">
+      <DependentUpon>ModelTarjetas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ClienteRepository.cs" />
+    <Compile Include="ManagerRecarga.cs" />
+    <Compile Include="ModelTarjetas.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTarjetas.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTarjetas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTarjetas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelTarjetas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelTarjetas.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Recarga.cs">
+      <DependentUpon>ModelTarjetas.tt</DependentUpon>
+    </Compile>
     <Compile Include="RecargaRepository.cs" />
+    <Compile Include="Tarjeta.cs">
+      <DependentUpon>ModelTarjetas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TarjetaRepository.cs" />
+    <Compile Include="Tarjeta_Cliente.cs">
+      <DependentUpon>ModelTarjetas.tt</DependentUpon>
+    </Compile>
     <Compile Include="UserRepository.cs" />
+    <Compile Include="Usuario.cs">
+      <DependentUpon>ModelTarjetas.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Tarjetas.Core\Tarjetas.Core.csproj">
       <Project>{724d419c-097f-4894-9ec2-f52d4ffbdcd6}</Project>
       <Name>Tarjetas.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EntityDeploy Include="ModelTarjetas.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>ModelTarjetas.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="ModelTarjetas.edmx.diagram">
+      <DependentUpon>ModelTarjetas.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelTarjetas.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelTarjetas.Context.cs</LastGenOutput>
+      <DependentUpon>ModelTarjetas.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelTarjetas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>ModelTarjetas.edmx</DependentUpon>
+      <LastGenOutput>ModelTarjetas.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

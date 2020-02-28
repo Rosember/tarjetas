@@ -10,9 +10,22 @@ namespace Tarjetas.infraestructure
 {
     public class RecargaRepository : IRecarga
     {
-        public void Recargar(string codigoTarjeta, string carnetCliente, string codigoUsuario, decimal money)
+        private BDTarjetasEntities bd = new BDTarjetasEntities();
+
+        public void Recargar(int idTarjeta, int idCliente, int idUsuario, decimal money)
         {
-            Tarjeta t = new Tarjeta(1, null);
+
+            bd.Recarga.Add(new Recarga()
+            {
+                fecha = DateTime.Now,
+                monto = money,
+                Id_Cliente= idCliente,
+                Id_Tarjeta = idTarjeta,
+                Id_Usuario = idUsuario
+            });
+            bd.SaveChanges();
         }
+
+
     }
 }

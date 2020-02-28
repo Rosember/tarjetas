@@ -19,8 +19,8 @@ namespace Tarjetas.Api.Controllers
         {
             try
             {
-                IRecarga recarga = new RecargaRepository();
-                recarga.Recargar(codigoTarjeta, carnetCliente, codigoUsuario, monto);
+                ManagerRecarga recarga = new ManagerRecarga(new TarjetaRepository(), new RecargaRepository(), new ClienteRepository(), new UserRepository());
+                recarga.AumentarSaldo(codigoTarjeta, carnetCliente, codigoUsuario, monto);
                 return Ok(new JsonObjectRecarga()
                 {
                     Id= 0,

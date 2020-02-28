@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Tarjetas.Core.Interfaces
 {
-    public interface IRecarga
+    public interface ICliente
     {
-        void Recargar(int idTarjeta, int idCliente, int idUsuario, decimal money);
+        Entity.Cliente FindByCarnet(string carnet);
     }
 }

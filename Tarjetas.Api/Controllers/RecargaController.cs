@@ -21,7 +21,7 @@ namespace Tarjetas.Api.Controllers
             {
                 IRecarga recarga = new RecargaRepository();
                 recarga.Recargar(codigoTarjeta, carnetCliente, codigoUsuario, monto);
-                return Ok(new JsonObjectRecarga()
+                return Ok(new JsonObjectResponse<Object>
                 {
                     Id= 0,
                     Mensaje ="Excelente"
@@ -29,14 +29,13 @@ namespace Tarjetas.Api.Controllers
             }
             catch (Exception e)
             {
-                return Ok(new JsonObjectRecarga()
+                return Ok(new JsonObjectResponse<Object>
                 {
                     Id = 1,
                     Mensaje = e.Message
                 });
                 
             }
-            
         }
     }
 }

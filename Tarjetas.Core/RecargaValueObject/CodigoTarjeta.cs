@@ -26,9 +26,9 @@ namespace Tarjetas.Core.RecargaValueObject
             }
             string strValue = (string)value;
 
-            if (strValue.Length > 30)
+            if (strValue.Length > 14)
             {
-                throw new ArgumentException("Can't be more than 30 characters long");
+                throw new ArgumentException("Can't be more than 14 characters long");
             }
             return true;
         }

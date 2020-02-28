@@ -17,7 +17,7 @@ namespace Tarjetas.Core.RecargaValueObject
             Value = value;
         }
 
-        public static MontoRecargaValueObject FromString(decimal value) => new MontoRecargaValueObject(value);
+        public static MontoRecargaValueObject FromDecimal(decimal value) => new MontoRecargaValueObject(value);
         protected override bool CheckValidity(object value)
         {
 

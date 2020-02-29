@@ -6,7 +6,6 @@ Sistema donde se puede hacer recargas de montos en dolares a una determinada tar
 Cada tarjeta tiene un codigo único, a traves de este se hace las recargas.
 Un cliente puede comprar muchas tarjetas.
 
-Tarjetas recargables (juegos electronicos) a un determinado codigo de tarjeta a aumentar el saldo.
 
 ##### Proyecto desarrollado con tecnologia .Net.
 Herramientas utilizadas:

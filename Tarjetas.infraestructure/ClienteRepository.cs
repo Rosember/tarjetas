@@ -17,12 +17,11 @@ namespace Tarjetas.infraestructure
             var result = bd.Cliente.Where(b => b.Carnet.Trim().Equals(carnet.Trim())).FirstOrDefault();
             if (result != null)
             {
-                return null;
-                //return new Core.Entity.Cliente(result.Id,);
+                return new Core.Entity.Cliente(result.Id, result.Nombre, result.Telefono, result.Carnet);
             }
             else
             {
-                throw new ArgumentException("No se encotro el codigo de la tarjeta en la base de datos");
+                throw new ArgumentException("No se encotro el carnet del cliente en la base de datos");
             }
         }
     }

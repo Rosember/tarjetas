@@ -11,29 +11,54 @@ namespace Tarjetas.infraestructure
     public class UserRepository : IUser
     {
 
-
+        private BDTarjetasEntities bd = new BDTarjetasEntities();
 
         public void Add(User user)
         {
-            
+            throw new NotImplementedException();
         }
 
         public void Edit(User user)
         {
-            
+            throw new NotImplementedException();
+        }
+
+        public User FindByCodigo(string codigo)
+        {
+            var result = bd.Usuario.Where(b => b.Codigo .Trim().Equals(codigo.Trim())).FirstOrDefault();
+            if (result != null)
+            {
+                return new Core.Entity.User(result.Id, result.Nombre, result.Codigo,result.Password);
+            }
+            else
+            {
+                throw new ArgumentException("No se encotro el codigo del usuario en la base de datos");
+            }
         }
 
         public User FindById(int Id)
         {
-            return new User(1, "Rosember Carrasco", "6543321", "Hello123");
+            throw new NotImplementedException();
         }
 
         public List<User> GetUSers()
         {
-            return new List<User>() {
-                new User(1, null, "6543321", "Hello123"),
-                new User(2, "Carlos Cruz", "32516", "95311")
-            };
+            var result = bd.Usuario.ToList();
+            if (result!=null && result.Count>0)
+            {
+                var users = new List<User>();
+                foreach (var item in result)
+                {
+                    users.Add(Conertir(item));
+                }
+                return users;
+            }
+            return new List<User>();
+        }
+
+        private User Conertir(Usuario item)
+        {
+            return new User(item.Id, item.Nombre, item.Codigo, item.Password);
         }
 
         public void Remove(int Id)

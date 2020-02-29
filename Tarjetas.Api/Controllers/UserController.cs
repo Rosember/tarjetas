@@ -12,14 +12,14 @@ namespace Tarjetas.Api.Controllers
     public class UserController : ApiController
     {
 
-        private IUser _user;
+        
 
         [HttpGet]
         [Route("getUser")]
         public IHttpActionResult getUser()
         {
-            _user = new UserRepository();
-            var users = _user.GetUSers();
+            ManagerUsuario managerUsuario = new ManagerUsuario(new UserRepository());
+            var users = managerUsuario.getAllUser();
             return Ok(users);
         }
     }

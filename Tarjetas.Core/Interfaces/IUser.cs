@@ -15,5 +15,6 @@ namespace Tarjetas.Core.Interfaces
         void Remove(int Id);
         List<User> GetUSers();
         User FindById(int Id);
+        User FindByCodigo(string codigo);
     }
 }

@@ -55,6 +55,7 @@
     </Compile>
     <Compile Include="ClienteRepository.cs" />
     <Compile Include="ManagerRecarga.cs" />
+    <Compile Include="ManagerUsuario.cs" />
     <Compile Include="ModelTarjetas.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

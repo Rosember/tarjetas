@@ -24,8 +24,11 @@ namespace Tarjetas.infraestructure
 
         public void AumentarSaldo(string codigoTarjeta, string carnetCliente, string codigoUsuario, decimal money)
         {
-            var result = itarjeta.FindByCodigo(codigoTarjeta);
-            //irecarga.Recargar(result.Id,)
+            var resultTarjeta = itarjeta.FindByCodigo(codigoTarjeta);
+            var resultUsuario = iusuario.FindByCodigo(codigoUsuario);
+            var resultCliente = icliente.FindByCarnet(carnetCliente);
+
+            irecarga.Recargar(resultTarjeta.Id, resultCliente.Id, resultUsuario.Id, money);
         }
     }
 }

@@ -1,11 +1,14 @@
 ﻿using System;
+
 namespace Tarjetas.Core.RecargaValueObject
 {
     public class FechaRecargaValueObject:ValueObject<FechaRecargaValueObject>
     {
-        private DateTime value;
 
-        public FechaRecargaValueObject(DateTime value)
+        protected FechaRecargaValueObject() { }
+        public DateTime value { get; internal set; }
+
+        internal FechaRecargaValueObject(DateTime value)
         {
             CheckValidity(value);
             this.value = value;

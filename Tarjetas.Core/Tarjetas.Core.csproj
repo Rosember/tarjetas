@@ -55,7 +55,15 @@
     <Compile Include="Entity\User.cs" />
     <Compile Include="ValueObject.cs" />
     <Compile Include="RecargaValueObject\FechaRecargaValueObject.cs" />
+    <Compile Include="ClienteValueObject\CarnetClienteValueObject.cs" />
+    <Compile Include="ClienteValueObject\TelefonoClienteValueObject.cs" />
+    <Compile Include="ClienteValueObject\NombreClienteValueObject.cs" />
+    <Compile Include="UserValueObject\CodigoUsuarioValueObject.cs" />
+    <Compile Include="UserValueObject\PasswordUserValueObject.cs" />
   </ItemGroup>
   <ItemGroup />
+  <ItemGroup>
+    <Folder Include="ClienteValueObject\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

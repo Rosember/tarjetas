@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tarjetas.Core.Entity;
-using Tarjetas.Core.Interfaces;
+using Tarjetas.Domain.Entity;
+using Tarjetas.Domain.Interfaces;
 
 namespace Tarjetas.infraestructure
 {
@@ -12,12 +12,12 @@ namespace Tarjetas.infraestructure
     {
         private BDTarjetasEntities bd = new BDTarjetasEntities();
 
-        public Core.Entity.Tarjeta FindByCodigo(string codigoTarjeta)
+        public Domain.Entity.Tarjeta FindByCodigo(string codigoTarjeta)
         {
             var result = bd.Tarjeta.Where(b => b.Codigo.Trim().Equals(codigoTarjeta.Trim())).FirstOrDefault();
             if (result!=null )
             {
-                return new Core.Entity.Tarjeta(result.Id, result.Codigo);
+                return new Domain.Entity.Tarjeta(result.Id, result.Codigo);
             }
             else
             {

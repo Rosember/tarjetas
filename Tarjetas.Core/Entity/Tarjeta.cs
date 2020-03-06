@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tarjetas.Core.RecargaValueObject;
+using Tarjetas.Domain.RecargaValueObject;
 
-namespace Tarjetas.Core.Entity
+namespace Tarjetas.Domain.Entity
 {
     public class Tarjeta
     {

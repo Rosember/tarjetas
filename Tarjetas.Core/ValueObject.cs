@@ -4,13 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tarjetas.Core
+namespace Tarjetas.Domain
 {
     public abstract class ValueObject<T> where T : ValueObject<T>
     {
         
         //private static readonly Member[] Members = GetMembers().ToArray();
-        protected abstract bool CheckValidity(object value);
+        protected abstract bool CheckValidity(object value);
+
         /*
         public override bool Equals(object other)
         {

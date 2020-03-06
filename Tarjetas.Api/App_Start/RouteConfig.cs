@@ -11,6 +11,7 @@ namespace Tarjetas.Api
     {
         public static void RegisterRoutes(RouteCollection routes)
         {
+            /*
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
             routes.MapRoute(
@@ -18,6 +19,7 @@ namespace Tarjetas.Api
                 url: "{controller}/{action}/{id}",
                 defaults: new { action = "Index", id = UrlParameter.Optional }
             );
+            */
         }
     }
 }

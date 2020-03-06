@@ -9,7 +9,7 @@ namespace Tarjetas.Api
     {
         public static void Register(HttpConfiguration config)
         {
-           
+
             // Configuración y servicios de API web
 
             var json = config.Formatters.JsonFormatter;

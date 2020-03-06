@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tarjetas.Core.RecargaValueObject
+namespace Tarjetas.Domain.RecargaValueObject
 {
     public class CodigoTarjeta:ValueObject<CodigoTarjeta>
     {

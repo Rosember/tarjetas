@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tarjetas.Core.Entity;
+using Tarjetas.Domain.Entity;
 
-namespace Tarjetas.Core.Interfaces
+namespace Tarjetas.Domain.Interfaces
 {
     public interface IUser
     {

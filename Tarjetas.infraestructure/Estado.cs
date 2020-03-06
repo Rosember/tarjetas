@@ -12,14 +12,9 @@ namespace Tarjetas.infraestructure
     using System;
     using System.Collections.Generic;
     
-    public partial class Recarga
+    public partial class Estado
     {
-        public int Id { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
-        public Nullable<decimal> monto { get; set; }
-        public Nullable<int> Id_Tarjeta { get; set; }
-        public Nullable<int> Id_Cliente { get; set; }
-        public Nullable<int> Id_Usuario { get; set; }
-        public Nullable<int> Estado { get; set; }
+        public int ID { get; set; }
+        public string Descripcion { get; set; }
     }
 }

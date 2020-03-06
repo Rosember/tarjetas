@@ -173,9 +173,9 @@
     <Folder Include="Views\Recarga\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tarjetas.Core\Tarjetas.Core.csproj">
+    <ProjectReference Include="..\Tarjetas.Core\Tarjetas.Domain.csproj">
       <Project>{724d419c-097f-4894-9ec2-f52d4ffbdcd6}</Project>
-      <Name>Tarjetas.Core</Name>
+      <Name>Tarjetas.Domain</Name>
     </ProjectReference>
     <ProjectReference Include="..\Tarjetas.infraestructure\Tarjetas.infraestructure.csproj">
       <Project>{99faca5c-7256-4b29-bc6a-d88e0a5d4588}</Project>

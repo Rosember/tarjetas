@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Tarjetas.Core.UserValueObject
+namespace Tarjetas.Domain.UserValueObject
 {
     public class NameUser
     {

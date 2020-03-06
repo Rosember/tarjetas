@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Tarjetas.Core.UserValueObject
+namespace Tarjetas.Domain.UserValueObject
 {
     public class CodigoUsuarioValueObject:ValueObject<CodigoUsuarioValueObject>
     {

@@ -54,6 +54,9 @@
       <DependentUpon>ModelTarjetas.tt</DependentUpon>
     </Compile>
     <Compile Include="ClienteRepository.cs" />
+    <Compile Include="Estado.cs">
+      <DependentUpon>ModelTarjetas.tt</DependentUpon>
+    </Compile>
     <Compile Include="ManagerRecarga.cs" />
     <Compile Include="ManagerUsuario.cs" />
     <Compile Include="ModelTarjetas.Context.cs">
@@ -89,9 +92,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Tarjetas.Core\Tarjetas.Core.csproj">
+    <ProjectReference Include="..\Tarjetas.Core\Tarjetas.Domain.csproj">
       <Project>{724d419c-097f-4894-9ec2-f52d4ffbdcd6}</Project>
-      <Name>Tarjetas.Core</Name>
+      <Name>Tarjetas.Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

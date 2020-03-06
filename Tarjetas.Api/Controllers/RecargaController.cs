@@ -5,7 +5,7 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 using Tarjetas.Api.Models;
-using Tarjetas.Core.Interfaces;
+using Tarjetas.Domain.Interfaces;
 using Tarjetas.infraestructure;
 
 namespace Tarjetas.Api.Controllers
@@ -13,10 +13,16 @@ namespace Tarjetas.Api.Controllers
     [RoutePrefix("api/Recarga")]
     public class RecargaController : ApiController
     {
-        [HttpGet]
-        [Route("aumentarSaldo/{codigoTarjeta}/{carnetCliente}/{codigoUsuario}/{monto:decimal}/")]
-        public IHttpActionResult RealizarRecarga(string codigoTarjeta,string carnetCliente, string codigoUsuario, decimal monto)
+
+        //[HttpGet]
+        //[Route("aumentarSaldo/{codigoTarjeta}/{carnetCliente}/{codigoUsuario}/{monto:decimal}/")]
+        [HttpPost]
+        [Route("aumentarSaldo")]
+        public IHttpActionResult RealizarRecarga([FromBody] string codigoTarjeta)
         {
+            /*
+             * 
+             * , [FromBody]string carnetCliente, [FromBody] string codigoUsuario, [FromBody] decimal monto
             try
             {
                 ManagerRecarga manager = new ManagerRecarga(new TarjetaRepository(), new RecargaRepository(), new ClienteRepository(), new UserRepository());
@@ -36,6 +42,12 @@ namespace Tarjetas.Api.Controllers
                 });
                 
             }
+            */
+            return Ok(new JsonObjectResponse<Object>
+            {
+                Id = 1,
+                Mensaje = "llego"
+            });
         }
     }
 }

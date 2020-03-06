@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.645
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarjetas.Core", "Tarjetas.Core\Tarjetas.Core.csproj", "{724D419C-097F-4894-9EC2-F52D4FFBDCD6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarjetas.Domain", "Tarjetas.Core\Tarjetas.Domain.csproj", "{724D419C-097F-4894-9EC2-F52D4FFBDCD6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarjetas.Api", "Tarjetas.Api\Tarjetas.Api.csproj", "{600E5F5C-F698-4E70-94C0-D617D1D9DAEE}"
 EndProject

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Tarjetas.Core.RecargaValueObject
+namespace Tarjetas.Domain.RecargaValueObject
 {
     public class FechaRecargaValueObject:ValueObject<FechaRecargaValueObject>
     {

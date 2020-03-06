@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Http;
-using Tarjetas.Core.Interfaces;
+using Tarjetas.Domain.Interfaces;
 using Tarjetas.infraestructure;
 
 namespace Tarjetas.Api.Controllers

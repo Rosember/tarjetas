@@ -1,7 +1,7 @@
 ﻿using System;
-using Tarjetas.Core.UserValueObject;
+using Tarjetas.Domain.UserValueObject;
 
-namespace Tarjetas.Core.Entity
+namespace Tarjetas.Domain.Entity
 {
     public class User 
     {

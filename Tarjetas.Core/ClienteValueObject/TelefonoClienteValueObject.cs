@@ -1,5 +1,5 @@
 ﻿using System;
-namespace Tarjetas.Core.ClienteValueObject
+namespace Tarjetas.Domain.ClienteValueObject
 {
     public class TelefonoClienteValueObject:ValueObject<TelefonoClienteValueObject>
     {

@@ -30,5 +30,6 @@ namespace Tarjetas.infraestructure
         public virtual DbSet<Tarjeta> Tarjeta { get; set; }
         public virtual DbSet<Tarjeta_Cliente> Tarjeta_Cliente { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
+        public virtual DbSet<Estado> Estado { get; set; }
     }
 }

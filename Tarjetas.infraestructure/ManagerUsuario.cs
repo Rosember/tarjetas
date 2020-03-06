@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Tarjetas.Core.Entity;
-using Tarjetas.Core.Interfaces;
+using Tarjetas.Domain.Entity;
+using Tarjetas.Domain.Interfaces;
 
 namespace Tarjetas.infraestructure
 {

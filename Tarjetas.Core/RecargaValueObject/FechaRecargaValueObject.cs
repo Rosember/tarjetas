@@ -6,15 +6,15 @@ namespace Tarjetas.Domain.RecargaValueObject
     {
 
         protected FechaRecargaValueObject() { }
-        public DateTime value { get; internal set; }
+        public DateTime? value { get; internal set; }
 
-        internal FechaRecargaValueObject(DateTime value)
+        internal FechaRecargaValueObject(DateTime? value)
         {
             CheckValidity(value);
             this.value = value;
         }
 
-        public static FechaRecargaValueObject FromDate(DateTime value) => new FechaRecargaValueObject(value);
+        public static FechaRecargaValueObject FromDate(DateTime? value) => new FechaRecargaValueObject(value);
         protected override bool CheckValidity(object value)
         {
             if (value == null)

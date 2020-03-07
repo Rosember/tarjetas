@@ -10,12 +10,23 @@ namespace Tarjetas.Domain.Entity
     public class Recarga
     {
         public int Id { get; set; }
+
+        public int? IdCliente { get; set; }
+        public int? IdUsuario { get; set; }
+        public int? IdTarjeta { get; set; }
+        public int? Estado { get; set; }
+
         public FechaRecargaValueObject Fecha { get; set; }
 
         public MontoRecargaValueObject Monto { get; set; }
 
-        public Recarga(DateTime fecha,decimal monto)
+        public Recarga( int Id ,int? IdCliente, int? IdUsuario, int? IdTarjeta, int? Estado,  DateTime? fecha,decimal? monto)
         {
+            this.Id = Id;
+            this.IdCliente = IdCliente;
+            this.IdTarjeta = IdTarjeta;
+            this.IdUsuario = IdUsuario;
+            this.Estado = Estado;
             Fecha = FechaRecargaValueObject.FromDate(fecha);
             Monto = MontoRecargaValueObject.FromDecimal(monto);
         }

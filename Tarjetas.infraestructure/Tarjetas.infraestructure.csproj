@@ -53,12 +53,12 @@
     <Compile Include="Cliente.cs">
       <DependentUpon>ModelTarjetas.tt</DependentUpon>
     </Compile>
-    <Compile Include="ClienteRepository.cs" />
+    <Compile Include="Repository\ClienteRepository.cs" />
     <Compile Include="Estado.cs">
       <DependentUpon>ModelTarjetas.tt</DependentUpon>
     </Compile>
-    <Compile Include="ManagerRecarga.cs" />
-    <Compile Include="ManagerUsuario.cs" />
+    <Compile Include="Manager\ManagerRecarga.cs" />
+    <Compile Include="Manager\ManagerUsuario.cs" />
     <Compile Include="ModelTarjetas.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -78,15 +78,15 @@
     <Compile Include="Recarga.cs">
       <DependentUpon>ModelTarjetas.tt</DependentUpon>
     </Compile>
-    <Compile Include="RecargaRepository.cs" />
+    <Compile Include="Repository\RecargaRepository.cs" />
     <Compile Include="Tarjeta.cs">
       <DependentUpon>ModelTarjetas.tt</DependentUpon>
     </Compile>
-    <Compile Include="TarjetaRepository.cs" />
+    <Compile Include="Repository\TarjetaRepository.cs" />
     <Compile Include="Tarjeta_Cliente.cs">
       <DependentUpon>ModelTarjetas.tt</DependentUpon>
     </Compile>
-    <Compile Include="UserRepository.cs" />
+    <Compile Include="Repository\UserRepository.cs" />
     <Compile Include="Usuario.cs">
       <DependentUpon>ModelTarjetas.tt</DependentUpon>
     </Compile>

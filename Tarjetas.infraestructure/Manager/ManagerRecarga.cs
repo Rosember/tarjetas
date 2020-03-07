@@ -22,6 +22,11 @@ namespace Tarjetas.infraestructure
             iusuario = usuario;
         }
 
+        public List<Domain.Entity.Recarga> GetAllRecarga()
+        {
+            return irecarga.GetAll();
+        }
+
         public void AumentarSaldo(string codigoTarjeta, string carnetCliente, string codigoUsuario, decimal money)
         {
             var resultTarjeta = itarjeta.FindByCodigo(codigoTarjeta);

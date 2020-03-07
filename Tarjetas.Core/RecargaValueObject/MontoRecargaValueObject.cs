@@ -9,15 +9,15 @@ namespace Tarjetas.Domain.RecargaValueObject
     public class MontoRecargaValueObject:ValueObject<MontoRecargaValueObject>
     {
         protected MontoRecargaValueObject() { }
-        public decimal Value { get; internal set; }
+        public decimal? Value { get; internal set; }
 
-        internal MontoRecargaValueObject(decimal value)
+        internal MontoRecargaValueObject(decimal? value)
         {
             CheckValidity(value);
             Value = value;
         }
 
-        public static MontoRecargaValueObject FromDecimal(decimal value) => new MontoRecargaValueObject(value);
+        public static MontoRecargaValueObject FromDecimal(decimal? value) => new MontoRecargaValueObject(value);
         protected override bool CheckValidity(object value)
         {
 

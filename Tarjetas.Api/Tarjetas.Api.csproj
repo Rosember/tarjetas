@@ -150,6 +150,7 @@
     </Compile>
     <Compile Include="Models\JsonObjectResponse.cs" />
     <Compile Include="Models\RequestAddBalance.cs" />
+    <Compile Include="Models\ResponseGetAllRecarga.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

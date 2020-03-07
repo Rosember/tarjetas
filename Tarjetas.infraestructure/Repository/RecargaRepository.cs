@@ -31,15 +31,38 @@ namespace Tarjetas.infraestructure
         public void Recargar(int idTarjeta, int idCliente, int idUsuario, decimal money)
         {
 
-            bd.Recarga.Add(new Recarga()
+            new Domain.Entity.Recarga(1, idCliente, idUsuario, idTarjeta, 1, DateTime.Now, money);
+            using (var bdconextTransaction =bd.Database.BeginTransaction())
             {
-                fecha = DateTime.Now,
-                monto = money,
-                Id_Cliente= idCliente,
-                Id_Tarjeta = idTarjeta,
-                Id_Usuario = idUsuario
-            });
-            bd.SaveChanges();
+                try
+                {
+                    bd.Recarga.Add(new Recarga()
+                    {
+                        fecha = DateTime.Now,
+                        monto = money,
+                        Id_Cliente = idCliente,
+                        Id_Tarjeta = idTarjeta,
+                        Id_Usuario = idUsuario,
+                        Estado = 1
+                    });
+
+                    var result = bd.Tarjeta_Cliente.SingleOrDefault(b => b.Id_Tarjeta == idTarjeta && b.Id_Cliente == idCliente);
+                    if (result != null)
+                    {
+                        result.Saldo = result.Saldo + money;
+                        bd.SaveChanges();
+                    }
+                    bd.SaveChanges();
+                    bdconextTransaction.Commit();
+                }
+                catch (Exception e)
+                {
+                    
+                    bdconextTransaction.Rollback();
+                    throw new ArgumentException(e.Message);
+                }
+            }
+            
         }
 
 

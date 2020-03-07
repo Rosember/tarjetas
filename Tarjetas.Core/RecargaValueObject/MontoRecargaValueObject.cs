@@ -29,6 +29,9 @@ namespace Tarjetas.Domain.RecargaValueObject
             if (decimalValue == 0)
                 throw new ArgumentException("can't zero the amount");
 
+            if (decimalValue < 0)
+                throw new ArgumentException("cannot be less than zero in the amount");
+
             if (decimalValue > 500)
                 throw new ArgumentException("can't enter amount greater than 500");
 

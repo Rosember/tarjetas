@@ -14,17 +14,27 @@ namespace Tarjetas.Api.Controllers
     [RoutePrefix("api/Recarga")]
     public class RecargaController : ApiController
     {
+        private ManagerRecarga manager;
+
+        public RecargaController()
+        {
+            manager = new ManagerRecarga(new TarjetaRepository(), 
+                new RecargaRepository(), 
+                new ClienteRepository(), 
+                new UserRepository());
+        }
+
 
         //[HttpGet]
-        //[Route("aumentarSaldo/{codigoTarjeta}/{carnetCliente}/{codigoUsuario}/{monto:decimal}/")]
+        //[Route("realizarRecarga/{codigoTarjeta}/{carnetCliente}/{codigoUsuario}/{monto:decimal}/")]
         [HttpPost]
-        [Route("aumentarSaldo")]
+        [Route("realizarRecarga")]
         public IHttpActionResult RealizarRecarga([FromBody] RequestAddBalance request)
         {
             
             try
             {
-                ManagerRecarga manager = new ManagerRecarga(new TarjetaRepository(), new RecargaRepository(), new ClienteRepository(), new UserRepository());
+                 
                 manager.AumentarSaldo(request.CodigoTarjeta, request.CarnetCliente, request.CodigoUsuario, request.Monto);
                 return Ok(new JsonObjectResponse<Object>
                 {
@@ -51,7 +61,6 @@ namespace Tarjetas.Api.Controllers
 
             try
             {
-                ManagerRecarga manager = new ManagerRecarga(new TarjetaRepository(), new RecargaRepository(), new ClienteRepository(), new UserRepository());
                 var response = manager.GetAllRecarga();
                 return Ok(Format(response));
             }

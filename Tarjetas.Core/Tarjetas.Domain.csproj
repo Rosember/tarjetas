@@ -60,6 +60,7 @@
     <Compile Include="ClienteValueObject\NombreClienteValueObject.cs" />
     <Compile Include="UserValueObject\CodigoUsuarioValueObject.cs" />
     <Compile Include="UserValueObject\PasswordUserValueObject.cs" />
+    <Compile Include="RecargaValueObject\EstadoTarjetaValueObject.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

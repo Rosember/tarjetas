@@ -7,15 +7,15 @@ namespace Tarjetas.Domain.Entity
     {
         public int Id { get; set; }
         public NameUser Name { get; internal set; }
-        public string Codigo { get; set; }
-        public string Password { get; set; }
+        public CodigoUsuarioValueObject Codigo { get; set; }
+        public PasswordUserValueObject Password { get; set; }
 
         public User(int id, string name, string codigo, string password)
         {   
             Id = id;
             Name = NameUser.FromString(name);
-            Codigo = codigo;
-            Password = password;
+            Codigo = CodigoUsuarioValueObject.FromString(codigo);
+            Password = PasswordUserValueObject.FromString(password);
         }
     }
 }

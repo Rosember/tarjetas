@@ -50,7 +50,6 @@ namespace Tarjetas.infraestructure
                     if (result != null)
                     {
                         result.Saldo = result.Saldo + money;
-                        bd.SaveChanges();
                     }
                     bd.SaveChanges();
                     bdconextTransaction.Commit();
@@ -65,6 +64,34 @@ namespace Tarjetas.infraestructure
             
         }
 
+        public void CancelReload(int id)
+        {
+            using (var bdconextTransaction = bd.Database.BeginTransaction())
+            {
+                try
+                {
+                    var recarga = bd.Recarga.SingleOrDefault(b => b.Id == id);
+                    if (recarga==null)
+                    {
+                        throw new ArgumentException("there is no ID= "+id);
+                    }
+                    recarga.Estado = 2;
 
+                    var result = bd.Tarjeta_Cliente.SingleOrDefault(b => b.Id_Tarjeta == recarga.Id_Tarjeta);
+                    if (result != null)
+                    {
+                        result.Saldo = result.Saldo - recarga.monto;
+                    }
+                    bd.SaveChanges();
+                    bdconextTransaction.Commit();
+                }
+                catch (Exception e)
+                {
+
+                    bdconextTransaction.Rollback();
+                    throw new ArgumentException(e.Message);
+                }
+            }
+        }
     }
 }

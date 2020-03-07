@@ -55,8 +55,8 @@ namespace Tarjetas.Api.Controllers
         }
 
         [HttpGet]
-        [Route("getAll")]
-        public IHttpActionResult GetAllRecarga()
+        [Route("ObtenerTodo")]
+        public IHttpActionResult GetAllReload()
         {
 
             try
@@ -75,6 +75,34 @@ namespace Tarjetas.Api.Controllers
             }
 
         }
+
+
+        [HttpGet]
+        [Route("anularRecarga/{id:int}/")]
+        public IHttpActionResult CancelReload( int id)
+        {
+
+            try
+            {
+                manager.CancelReload(id);
+                return Ok(new JsonObjectResponse<Object>
+                {
+                    Id = 0,
+                    Mensaje = "Correcto!!!"
+                });
+            }
+            catch (Exception e)
+            {
+                return Ok(new JsonObjectResponse<Object>
+                {
+                    Id = 1,
+                    Mensaje = e.Message
+                });
+
+            }
+
+        }
+
 
         private List<ResponseGetAllRecarga> Format(List<Domain.Entity.Recarga> response)
         {

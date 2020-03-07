@@ -11,5 +11,6 @@ namespace Tarjetas.Domain.Interfaces
     {
         void Recargar(int idTarjeta, int idCliente, int idUsuario, decimal money);
         List<Recarga> GetAll();
+        void CancelReload(int id);
     }
 }

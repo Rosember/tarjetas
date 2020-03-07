@@ -35,5 +35,10 @@ namespace Tarjetas.infraestructure
 
             irecarga.Recargar(resultTarjeta.Id, resultCliente.Id, resultUsuario.Id, money);
         }
+
+        public void CancelReload(int id)
+        {
+            irecarga.CancelReload(id);
+        }
     }
 }

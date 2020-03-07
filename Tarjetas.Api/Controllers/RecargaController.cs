@@ -18,15 +18,13 @@ namespace Tarjetas.Api.Controllers
         //[Route("aumentarSaldo/{codigoTarjeta}/{carnetCliente}/{codigoUsuario}/{monto:decimal}/")]
         [HttpPost]
         [Route("aumentarSaldo")]
-        public IHttpActionResult RealizarRecarga([FromBody] string codigoTarjeta)
+        public IHttpActionResult RealizarRecarga([FromBody] RequestAddBalance request)
         {
-            /*
-             * 
-             * , [FromBody]string carnetCliente, [FromBody] string codigoUsuario, [FromBody] decimal monto
+            
             try
             {
                 ManagerRecarga manager = new ManagerRecarga(new TarjetaRepository(), new RecargaRepository(), new ClienteRepository(), new UserRepository());
-                manager.AumentarSaldo(codigoTarjeta, carnetCliente, codigoUsuario, monto);
+                manager.AumentarSaldo(request.CodigoTarjeta, request.CarnetCliente, request.CodigoUsuario, request.Monto);
                 return Ok(new JsonObjectResponse<Object>
                 {
                     Id= 0,
@@ -42,12 +40,7 @@ namespace Tarjetas.Api.Controllers
                 });
                 
             }
-            */
-            return Ok(new JsonObjectResponse<Object>
-            {
-                Id = 1,
-                Mensaje = "llego"
-            });
+           
         }
     }
 }
